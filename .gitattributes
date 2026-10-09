@@ -1,0 +1,3 @@
+# 统一换行符，避免部署后文件被 CRLF 污染
+* text=auto eol=lf
+*.svg text

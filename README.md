@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+# wenxuhuan.github.io
 
-You can use the [editor on GitHub](https://github.com/wenxuhuan/wenxuhuan.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+个人主页。极简、单屏、居中排版。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 结构
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+index.html           单页名片
+assets/css/main.css  样式
+assets/js/vi.js      入场动画 + 主题切换
+.nojekyll            关闭 GitHub Pages 的 Jekyll 处理
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## 本地预览
 
-### Jekyll Themes
+```bash
+python -m http.server 8000
+# 打开 http://localhost:8000
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wenxuhuan/wenxuhuan.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## 修改
 
-### Support or Contact
+内容都在 `index.html` 里，直接改文字即可：
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- 名字 → `<h1>`
+- 引文与出处 → `.quote-content` / `.quote-author`
+- 外链 → `.links` 里的 `<a>`
+- 所在地 → `.location-text`
+
+## 说明
+
+- 深浅色默认跟随系统，也可点右上角按钮手动切换（记在 localStorage）。

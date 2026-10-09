@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#111111"/>
+  <g fill="#f4f4f2">
+    <rect x="120" y="120" width="150" height="150" fill-opacity="0.10"/>
+    <rect x="300" y="120" width="150" height="150" fill-opacity="0.16"/>
+    <rect x="480" y="120" width="150" height="150" fill-opacity="0.24"/>
+    <rect x="660" y="120" width="150" height="150" fill-opacity="0.34"/>
+    <rect x="840" y="120" width="150" height="150" fill-opacity="0.46"/>
+    <rect x="120" y="300" width="150" height="150" fill-opacity="0.16"/>
+    <rect x="300" y="300" width="150" height="150" fill-opacity="0.24"/>
+    <rect x="480" y="300" width="150" height="150" fill-opacity="0.34"/>
+    <rect x="660" y="300" width="150" height="150" fill-opacity="0.46"/>
+    <rect x="840" y="300" width="150" height="150" fill-opacity="0.60"/>
+    <rect x="120" y="480" width="150" height="150" fill-opacity="0.24"/>
+    <rect x="300" y="480" width="150" height="150" fill-opacity="0.34"/>
+    <rect x="480" y="480" width="150" height="150" fill-opacity="0.46"/>
+    <rect x="660" y="480" width="150" height="150" fill-opacity="0.60"/>
+    <rect x="840" y="480" width="150" height="150" fill-opacity="0.78"/>
+    <rect x="120" y="660" width="150" height="150" fill-opacity="0.34"/>
+    <rect x="300" y="660" width="150" height="150" fill-opacity="0.46"/>
+    <rect x="480" y="660" width="150" height="150" fill-opacity="0.60"/>
+    <rect x="660" y="660" width="150" height="150" fill-opacity="0.78"/>
+    <rect x="840" y="660" width="150" height="150" fill-opacity="1"/>
+  </g>
+</svg>

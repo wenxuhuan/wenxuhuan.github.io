@@ -1,0 +1,6 @@
+# 忽略项目内部数据与系统文件
+.workbuddy/
+.tmp/
+Thumbs.db
+Desktop.ini
+.DS_Store

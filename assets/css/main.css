@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/* ============================================================
+   main.css
+   按 iissnan.com 的设计语言复刻：极简、居中、1px 细线、点状下划线
+   配色数值取自原站 main.css
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. 主题变量（浅色为默认，深色取自原站）
+   ------------------------------------------------------------ */
+:root{
+  --bg:#fff;
+  --text:#333;
+  --head:#222;
+  --muted:#666;
+  --icon:#ccc;
+  --line:#eee;
+  --link:#333;
+  --link-line:#999;
+  --link-hover:#333;
+  --sel-bg:#222;
+  --sel-fg:#fff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121621;
+    --text:#6C7486;
+    --head:#E4ECFA;
+    --muted:#6C7486;
+    --icon:#3F4656;
+    --line:#242836;
+    --link:#99A3BA;
+    --link-line:#6C7486;
+    --link-hover:#E4ECFA;
+    --sel-bg:#222;
+    --sel-fg:#99A3BA;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121621;
+  --text:#6C7486;
+  --head:#E4ECFA;
+  --muted:#6C7486;
+  --icon:#3F4656;
+  --line:#242836;
+  --link:#99A3BA;
+  --link-line:#6C7486;
+  --link-hover:#E4ECFA;
+  --sel-bg:#222;
+  --sel-fg:#99A3BA;
+}
+
+/* ------------------------------------------------------------
+   2. Reset
+   ------------------------------------------------------------ */
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+  background-color:var(--bg);
+  transition:background-color .3s ease;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+       "Microsoft YaHei",Helvetica,Arial,sans-serif,
+       "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  text-align:center;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+p{margin:20px 0}
+ul,ol{list-style:none}
+img{display:block;max-width:100%}
+a{color:var(--link);text-decoration:none}
+i{font-style:normal}
+::selection{background:var(--sel-bg);color:var(--sel-fg)}
+:focus-visible{outline:1px solid var(--link);outline-offset:3px}
+
+/* ------------------------------------------------------------
+   3. 入场动画（与原站同名同行为）
+   ------------------------------------------------------------ */
+.animate-slide-in-down,
+.animate-slide-in-up{
+  position:relative;
+  opacity:0;
+}
+.animate-slide-in-down{top:-10px}
+.animate-slide-in-up{bottom:-10px}
+
+.animate-slide-in-left{left:-100%}
+.animate-slide-in-right{right:-100%}
+
+/* 无 JS 时直接显示 */
+.no-js .animate-slide-in-down,
+.no-js .animate-slide-in-up{opacity:1;top:0;bottom:0}
+.no-js .animate-slide-in-left{left:0}
+.no-js .animate-slide-in-right{right:0}
+
+/* 用户偏好减弱动效时同样直接显示 */
+.no-anim .animate-slide-in-down,
+.no-anim .animate-slide-in-up{opacity:1;top:0;bottom:0}
+.no-anim .animate-slide-in-left{left:0}
+.no-anim .animate-slide-in-right{right:0}
+
+/* ------------------------------------------------------------
+   4. 主容器与标题
+   ------------------------------------------------------------ */
+.vi{
+  max-width:780px;
+  margin:100px auto 0;
+  padding:0 20px;
+}
+@media (max-width:767px){
+  .vi{margin-top:50px}
+}
+
+h1{
+  color:var(--head);
+  font-size:32px;
+  font-weight:bold;
+  line-height:1.5;
+  letter-spacing:.02em;
+}
+
+.page-sub{
+  margin:12px 0 0;
+  font-size:13px;
+  letter-spacing:.1em;
+  color:var(--muted);
+}
+
+/* ------------------------------------------------------------
+   5. 引文
+   ------------------------------------------------------------ */
+.quote{
+  position:relative;
+  overflow:hidden;
+  margin:40px 20px;
+  color:var(--muted);
+}
+.quote-line{
+  display:block;
+  position:relative;
+  height:1px;
+  background:var(--line);
+  transition:all .3s ease;
+}
+.quote-icon{
+  position:absolute;
+  color:var(--icon);
+  font-size:26px;
+  line-height:1;
+  font-family:Georgia,"Songti SC",serif;
+}
+.quote-icon.animate-slide-in-down,
+.quote-icon.animate-slide-in-up{opacity:0}
+.no-js .quote-icon.animate-slide-in-down,
+.no-js .quote-icon.animate-slide-in-up,
+.no-anim .quote-icon.animate-slide-in-down,
+.no-anim .quote-icon.animate-slide-in-up{opacity:1}
+
+.quote-icon-start{left:0}
+.quote-icon-start.animate-slide-in-down{top:-10px}
+.no-js .quote-icon-start.animate-slide-in-down,
+.no-anim .quote-icon-start.animate-slide-in-down{top:0}
+
+.quote-icon-end{right:0}
+.quote-icon-end.animate-slide-in-up{bottom:-10px}
+.no-js .quote-icon-end.animate-slide-in-up,
+.no-anim .quote-icon-end.animate-slide-in-up{bottom:0}
+
+.quote-content{margin:30px auto 0}
+.quote-author{margin:10px auto 30px}
+.quote-author em{font-style:italic;color:var(--head)}
+
+/* ------------------------------------------------------------
+   6. 链接行（点状下划线 → hover 实线）
+   ------------------------------------------------------------ */
+.links{
+  margin-top:40px;
+  font-size:14px;
+}
+.links a{
+  display:inline-block;
+  position:relative;
+  margin-left:10px;
+  border-bottom:1px dotted var(--link-line);
+  transition:border .3s ease,color .3s ease;
+}
+.links a:hover{
+  color:var(--link-hover);
+  border-bottom:1px solid var(--link-line);
+}
+.links a:active{top:1px !important}
+.links a:first-child{margin-left:0}
+
+/* ------------------------------------------------------------
+   7. 所在地
+   ------------------------------------------------------------ */
+.location{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:40px;
+  color:var(--muted);
+}
+.location-icon{
+  font-size:14px;
+  line-height:1;
+  color:var(--muted);
+}
+.location-icon svg{
+  width:14px;height:14px;
+  fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.location-text{
+  margin-left:6px;
+  font-size:13px;
+}
+
+.relocating{
+  opacity:0;
+  font-size:13px;
+  color:var(--icon);
+  transition:all .3s ease;
+}
+
+/* ------------------------------------------------------------
+   8. 主题切换按钮（由 JS 注入）
+   ------------------------------------------------------------ */
+.theme-toggle{
+  position:fixed;
+  top:20px;right:20px;
+  z-index:20;
+  width:32px;height:32px;
+  display:grid;place-items:center;
+  background:transparent;border:0;
+  color:var(--icon);
+  cursor:pointer;
+  transition:color .3s ease;
+}
+.theme-toggle:hover{color:var(--muted)}
+.theme-toggle svg{
+  width:16px;height:16px;
+  fill:none;stroke:currentColor;stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.icon-moon{display:block}
+.icon-sun{display:none}
+:root[data-theme="dark"] .icon-moon{display:none}
+:root[data-theme="dark"] .icon-sun{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .icon-moon{display:none}
+  :root:not([data-theme="light"]) .icon-sun{display:block}
+}
+
+/* ------------------------------------------------------------
+   9. 响应式
+   ------------------------------------------------------------ */
+@media (max-width:767px){
+  h1{font-size:26px}
+  .quote{margin:32px 0}
+  .quote-content{font-size:15px}
+  .links a{margin-left:8px}
+  .theme-toggle{top:14px;right:14px}
+}
